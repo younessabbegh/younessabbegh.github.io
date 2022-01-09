@@ -14,7 +14,7 @@ body{
 }
 
 .header{
-    height: 90vh;
+    height: 100vh;
     position: relative;
 }
 
@@ -24,38 +24,42 @@ body{
     background-color: black ;
     opacity: 0.7;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     padding: 0 40px;
-    z-index: 10;
+    z-index: 1;
     position: fixed;
     
 }
 
-.navbar-box{
-    display: flex;
-    align-items: center;
-    font-size: 2rem;
-    color: white;
+
+
+.logo{
+    font-size: 35px;
+    color: #da6b1d;
+    line-height: 80px;
+    padding: 0 100px;
+    font-weight: bold;
 }
-.navbar-box a{
+.logo a{
     text-decoration: none;
     color: whitesmoke;
+   
 }
-
-.heading-tertiary{
-    font-size: 3.5rem;
+.logo a:hover{
+    color: #da6b1d;
 }
-
-.navbar-list{
+nav ul{
+    float: right;
+    margin-right: 20px;
+}
+nav ul li{
+    display: inline-block;
+}
+nav ul li a {
     list-style: none;
     font-size: 2rem;
 }
-
-.navbar-item{
-    display: inline-block;
-}
-
 .navbar-link:visited,
 .navbar-link:link{
     text-decoration: none;
@@ -86,18 +90,63 @@ body{
     color: white;
 }
 
-.toggle{
-    height: 5rem;
-    width: 5rem;
+.checkbtn{
+    font-size: 30px;
+    color: white;
+   float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+    
+   }
+
+#check{
     display: none;
 }
-
-.toggle div{
-    height: 4px;
-    width: 100%;
-    background-color: white;
-    margin: 1rem;
+@media (max-width: 952px){
+    label.logo{
+      font-size: 30px;
+      padding-left: 50px;
+    }
+    nav ul li a{
+      font-size: 16px;
+    }
 }
+@media (max-width: 858px){
+    .checkbtn{
+      display: block;
+      
+    }
+    ul{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: black;     
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+    nav ul li{
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+          }
+    nav ul li a{
+    font-size: 20px;
+          }
+          a:hover, a.navbar-link{
+            background: none;
+            color: #da6b1d;
+    }
+    #check:checked ~ ul{
+        left: 0;
+      }
+      
+    }
+    
+
 
 .header-container{
     width: 100%;
@@ -189,20 +238,8 @@ body{
     font-weight: 800;
 }
 
-.menu-grid{
-    display: grid;
-    grid-template-rows:repeat(2, 1fr) ;
-    grid-template-columns: repeat(4, 1fr);
-    justify-self: center;
-    grid-gap: 2rem;
-}
 
-.heading-secondary{
-    font-size: 7rem;
-    text-transform: uppercase;
-    color: white;
-    text-align: center;
-}
+
 
 .menu-img{
     height: 50%;
@@ -449,15 +486,21 @@ body{
      }
 .review-box{
    font-size: 1.6rem;
-   margin-left: 2rem;
+   
 
 }
 .review-star .fa{
     color: white;
+    font-size: 1.6rem;
+   margin-left: 2rem;
 
 }
 .review-star .checked{
     color: yellow;
+}
+.review-text{
+    font-size: 25px;
+   margin-left: 2rem;
 }
 
 .footer {
@@ -523,4 +566,3 @@ color: rgb(226, 224, 224);}
     font-size: 40px ;
 
 }
-.
